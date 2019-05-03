@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imageView.contentMode = .scaleAspectFit
+
         //setup the cropper
         cropper.delegate = self
         //cropper.cropRatio = 2/3 //(can be set during runtime or in init)
@@ -29,7 +31,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cropExistingImage(_ sender: Any) {
-        let cropper = UIImageCropper(cropRatio: 2/3)
+        let cropper = UIImageCropper(cropRatio: 16/9)
         cropper.delegate = self
         cropper.picker = nil
         cropper.image = UIImage(named: "image")
